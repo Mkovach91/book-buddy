@@ -5,7 +5,7 @@ import { getBookDetails, updateBookAvailability } from "../api/API";
 
 const BookDetails = () => {
   const { id } = useParams();
-  const [book, setBook] = useState([]);
+  const [book, setBook] = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -24,9 +24,9 @@ const BookDetails = () => {
     const token = localStorage.getItem("token");
     try {
       const response = await updateBookAvailability(id, false, token);
-      if (response.success) {
+      if (response.book && response.book.available === false) {
         alert("Book added to profile!");
-        setBook({ ...book, available: false }); 
+        setBook(response.book); 
       } else {
         alert("Book already checked out");
       }
@@ -36,17 +36,19 @@ const BookDetails = () => {
   };
 
   return (
-    <>
+    <div className="book-details-container">
       <h1>{book.title}</h1>
       <p>{book.description}</p>
-      <p>Author: {book.author}</p>
-      <img src={book.coverimage} alt={book.title} />
+      <p><strong>Author:</strong> {book.author}</p>
+      {book.coverimage && (
+        <img src={book.coverimage} alt={book.title} width={400} />
+      )}
 
       {isLoggedIn && book.available && (
-        <button onClick={handleCheckout}>Check Out</button>
+        <button className="checkout-button" onClick={handleCheckout}>Check Out</button>
       )}
-    </>
-  )
-}
+    </div>
+  );
+};
 
 export default BookDetails;

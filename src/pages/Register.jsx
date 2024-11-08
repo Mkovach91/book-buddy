@@ -25,59 +25,60 @@ const Register = () => {
   };
 
   return(
-    <div class='register-form'>
-      <h2>Register</h2>
+    <div className="page-container">
+      <div className="login-container">
+        <h2>Register</h2>
 
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label id="firstname">First Name:</label>
-          <input
-            type="text"
-            id="firstname"
-            value={firstname}
-            onChange={(event) => setFirstname(event.target.value)}
-            placeholder="First Name" 
-            /> 
-        </div>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="firstname">First Name:</label>
+            <input
+              type="text"
+              id="firstname"
+              value={firstname}
+              onChange={(event) => setFirstname(event.target.value)}
+              placeholder="First Name"
+            />
+          </div>
 
-        <div>
-          <label id="lastname">Last Name:</label>
-          <input
-            type="text"
-            id="lastname"
-            value={lastname}
-            onChange={(event) => setLastname(event.target.value)}
-            placeholder="Last Name" 
-            /> 
-        </div>
+          <div>
+            <label htmlFor="lastname">Last Name:</label>
+            <input
+              type="text"
+              id="lastname"
+              value={lastname}
+              onChange={(event) => setLastname(event.target.value)}
+              placeholder="Last Name"
+            />
+          </div>
 
-        <div>
-          <label id="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-            placeholder="Email" 
-            /> 
-        </div>
+          <div>
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              placeholder="Email"
+            />
+          </div>
 
-        <div>
-          <label id="password">Password:</label>
-          <input
-            type="text"
-            id="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-            placeholder="Password" 
-            /> 
-        </div>
+          <div>
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              placeholder="Password"
+            />
+          </div>
 
-
-        <button type="submit">Register New Account</button>
-      </form>
+          <button type="submit">Register New Account</button>
+        </form>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Register

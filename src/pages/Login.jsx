@@ -24,16 +24,23 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Username: <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
-      </label>
-      <label>
-        Password: <input type="text" value={password} onChange={(event) => setPassword(event.target.value)} />
-      </label>
-      <button type="submit">Submit</button>
-    </form>
-  )
-}
+    <div className="page-container">
+    <div className="login-container">
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Email: 
+          <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
+        </label>
+        <label>
+          Password: 
+          <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+);
+};
 
 export default Login
