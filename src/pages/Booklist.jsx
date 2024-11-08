@@ -19,17 +19,19 @@ const BookList = () => {
   }, []);
 
   return (
-    <div>
+    <div className="book-list-container">
       <h1>Book Listings</h1>
-        <ul>
-          {books.map((book) => (
-          <li key={book.id}>
-          <a href={`/books/${book.id}`}>{book.title}</a>
-          </li>
-          ))}
-        </ul>
+      <div className="book-list">
+        {books.map((book) => (
+          <div key={book.id} className="book-item">
+            <a href={`/books/${book.id}`} className="book-link">
+              <h2>{book.title}</h2>
+            </a>
+          </div>
+        ))}
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default BookList;

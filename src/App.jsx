@@ -7,6 +7,7 @@ import Register from "./pages/Register"
 import Account from "./pages/Account"
 import ApiTest from "./api-test"
 import NavBar from "./Navbar"
+import './index.css'
 
 const App = () => {
 
@@ -22,7 +23,7 @@ const App = () => {
         <Route path="/account" element={<Account />} />
         <Route path="/api-test" element={<ApiTest />} />
       </Routes>
-    </>
+       </>
   )
 }
 
