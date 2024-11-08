@@ -6,14 +6,16 @@ import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Account from "./pages/Account"
 import ApiTest from "./api-test"
+import NavBar from "./Navbar"
 
 const App = () => {
 
   return (
     <>
+      <NavBar />
       <h1>Book Buddy</h1>
       <Routes>
-        <Route path="/book-list" element={<BookList />} />
+        <Route path="/" element={<BookList />} />
         <Route path="/books/:id" element={<BookDetails />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
